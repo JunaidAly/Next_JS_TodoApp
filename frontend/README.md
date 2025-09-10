@@ -236,26 +236,56 @@ const [darkMode, setDarkMode] = useState(false);
 ```bash
 npm run dev      # 🚀 Start development server with hot reload
 npm run build    # 🏠 Build optimized production bundle
+npm run export   # 📦 Export static files for deployment
+npm run deploy   # 🚀 Build and export in one command
 npm run start    # ▶️ Start production server
 npm run lint     # 🔍 Run ESLint for code quality
 ```
 
 ## 🌐 **Deployment**
 
-### **Deploy on Vercel (Recommended)**
-```bash
-# Build and deploy
-npm run build
+### **Deploy on Netlify (Static Export)**
 
-# Or use Vercel CLI for instant deployment
-npx vercel
+#### **Method 1: Drag & Drop**
+```bash
+# Build for static export
+npm run deploy
+
+# This creates an 'out' folder - drag it to Netlify
+```
+
+#### **Method 2: Git Integration**
+1. Push your code to GitHub/GitLab
+2. Connect your repository to Netlify
+3. Use these build settings:
+   - **Build command**: `npm run deploy`
+   - **Publish directory**: `out`
+   - **Node version**: `18`
+
+#### **Method 3: Netlify CLI**
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Build and deploy
+npm run deploy
+netlify deploy --prod --dir=out
+```
+
+### **Deploy on Vercel (Recommended for Next.js)**
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy (will auto-detect Next.js)
+vercel --prod
 ```
 
 ### **Other Deployment Options**
-- **Netlify**: Drag and drop the `out` folder
-- **GitHub Pages**: Use `next export` for static deployment
-- **Docker**: Containerize with the provided Dockerfile
-- **AWS/Azure**: Deploy to cloud platforms
+- **GitHub Pages**: Use the static export in `out` folder
+- **AWS S3**: Upload the `out` folder to S3 bucket
+- **Firebase Hosting**: Deploy the static export
+- **Docker**: Containerize for any platform
 
 ## 🌟 **Contributing**
 
