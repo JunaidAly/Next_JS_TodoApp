@@ -56,6 +56,38 @@ Next_JS_TodoApp/
 
 ## 🌐 **Deployment**
 
+### **Deploy on Vercel (Recommended)**
+
+Vercel is the recommended deployment platform for Next.js applications, offering zero-configuration deployment with optimal performance.
+
+#### **Method 1: Vercel Dashboard (Easiest)**
+1. **Push your code to GitHub/GitLab**
+2. **Connect to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Click "Import Project"
+   - Connect your GitHub repository
+3. **Vercel will auto-detect Next.js** and deploy automatically
+4. **Get your live URL** - Your app will be available at `https://your-app-name.vercel.app`
+
+#### **Method 2: Vercel CLI**
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Navigate to frontend directory
+cd frontend
+
+# Deploy to Vercel
+vercel
+
+# Follow the prompts to configure your deployment
+```
+
+#### **Method 3: GitHub Integration**
+1. Connect your GitHub repository to Vercel
+2. Every push to `main` branch automatically deploys
+3. Pull requests get preview deployments
+
 ### **Deploy on Netlify**
 
 1. **Push your code to GitHub/GitLab**
