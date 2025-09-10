@@ -235,9 +235,7 @@ const [darkMode, setDarkMode] = useState(false);
 
 ```bash
 npm run dev      # 🚀 Start development server with hot reload
-npm run build    # 🏠 Build optimized production bundle
-npm run export   # 📦 Export static files for deployment
-npm run deploy   # 🚀 Build and export in one command
+npm run build    # 🏠 Build and export static files to 'out' directory
 npm run start    # ▶️ Start production server
 npm run lint     # 🔍 Run ESLint for code quality
 ```
@@ -249,16 +247,16 @@ npm run lint     # 🔍 Run ESLint for code quality
 #### **Method 1: Drag & Drop**
 ```bash
 # Build for static export
-npm run deploy
+npm run build
 
 # This creates an 'out' folder - drag it to Netlify
 ```
 
-#### **Method 2: Git Integration**
+#### **Method 2: Git Integration (Recommended)**
 1. Push your code to GitHub/GitLab
 2. Connect your repository to Netlify
 3. Use these build settings:
-   - **Build command**: `npm run deploy`
+   - **Build command**: `npm run build`
    - **Publish directory**: `out`
    - **Node version**: `18`
 
@@ -268,7 +266,7 @@ npm run deploy
 npm install -g netlify-cli
 
 # Build and deploy
-npm run deploy
+npm run build
 netlify deploy --prod --dir=out
 ```
 
