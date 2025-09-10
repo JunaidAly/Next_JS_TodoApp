@@ -46,12 +46,15 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen  flex  items-center bg-gray-50 py-8">
+    <div className="min-h-screen flex items-center bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 py-8">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h1 className="text-3xl font-bold text-gray-800 text-center mb-8">
-            My Todo List
-          </h1>
+        <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl border border-white/20 p-8 animate-fadeIn">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2 animate-slideDown">
+              ✨ My Todo List
+            </h1>
+            <p className="text-gray-600 animate-slideUp">Stay organized and get things done!</p>
+          </div>
           
           <AddTodo onAddTodo={addTodo} />
           
@@ -68,9 +71,17 @@ export default function Home() {
           />
           
           {todos.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">
-                No todos yet. Add one above to get started!
+            <div className="text-center py-16 animate-pulse">
+              <div className="mb-4">
+                <svg className="w-24 h-24 mx-auto text-gray-300 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <p className="text-gray-500 text-xl font-medium mb-2">
+                No todos yet! 🎉
+              </p>
+              <p className="text-gray-400">
+                Add your first task above to get started on your productivity journey!
               </p>
             </div>
           )}
