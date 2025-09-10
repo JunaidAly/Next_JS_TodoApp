@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Remove static export for Vercel deployment
-  // output: 'export',
-  trailingSlash: true,
+  // Optimized for Vercel deployment
   images: {
     unoptimized: true
+  },
+  // Enable experimental features for better performance
+  experimental: {
+    optimizePackageImports: ['lucide-react']
   }
 };
 
